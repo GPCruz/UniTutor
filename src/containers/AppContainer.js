@@ -7,10 +7,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect
+  Link
 } from "react-router-dom";
 import { AppContext } from "../libs/contextLib";
+import Welcome from '../components/Welcome';
 
 function AppContainer(props) {
     const [isAuthenticated, userHasAuthenticated] = useState(false);
@@ -35,7 +35,7 @@ function AppContainer(props) {
                             <Switch>
                                 <Route exact path="/">
                                     {isAuthenticated ? (
-                                        <Col>Boas vindas</Col>
+                                        <Welcome/>
                                     ):(
                                         <><Col>Explicação sobre o projeto</Col><Col><Login /></Col></>
                                     )}

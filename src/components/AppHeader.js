@@ -5,8 +5,6 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 let g_titulo = 'Gerador de conteúdo personalizado';
-let nome_aluno = 'Aluno';
-let greet_text = 'Olá ' + nome_aluno + ',';
 
 function AppHeader() {
 
