@@ -13,11 +13,13 @@ import {
   useHistory,
   Redirect
 } from "react-router-dom";
+import { useAppContext } from "../libs/contextLib";
 
 export default function Login() {
     let history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { userHasAuthenticated } = useAppContext();
   
     function validateForm() {
       return email.length > 0 && password.length > 0;
@@ -25,7 +27,8 @@ export default function Login() {
   
     function handleSubmit(event) {
       event.preventDefault();
-      history.push("/about");
+      userHasAuthenticated(true);
+      history.push("/");
     }
   
     return (

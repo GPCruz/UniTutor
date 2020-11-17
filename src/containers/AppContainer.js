@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Container } from 'react-bootstrap';
+import AppHeader from '../components/AppHeader';
 import Login from "./Login";
 import {
   BrowserRouter as Router,
@@ -10,30 +11,42 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import { AppContext } from "../libs/contextLib";
 
 function AppContainer(props) {
+    const [isAuthenticated, userHasAuthenticated] = useState(false);
+    
+    function handleLogout() {
+        userHasAuthenticated(false);
+    }
+
     return (
         <div className="App">
-            <Container>
-                <Router>
-                    <div className="nav">
-                        <ul className="menu">
-                            <li><Link exact to="/">Login</Link></li>
-                            <li><Link exact to="/about">Resumo</Link></li>
-                            <li><Link exact to="/welcome">Bem Vindo</Link></li>
-                        </ul>
-                    </div>
-                    <Row>
-                        <Col>
+            <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+                <Container>
+                    <Router>
+                        <AppHeader />
+                        <div className="nav">
+                            <ul className="menu">
+                                {isAuthenticated ? (
+                                    <li><Link exact to="/" onClick={handleLogout}>Logout</Link></li>
+                                ):""}
+                            </ul>
+                        </div>
+                        <Row>
                             <Switch>
-                                <Route exact path="/"><Login /></Route>
-                                <Route exact path="/about">Explicação sobre o projeto</Route>
-                                <Route exact path="/welcome">Boas vindas</Route>
+                                <Route exact path="/">
+                                    {isAuthenticated ? (
+                                        <Col>Boas vindas</Col>
+                                    ):(
+                                        <><Col>Explicação sobre o projeto</Col><Col><Login /></Col></>
+                                    )}
+                                </Route>
                             </Switch>
-                        </Col>
-                    </Row> 
-                </Router>
-            </Container>
+                        </Row> 
+                    </Router>
+                </Container>
+            </AppContext.Provider>
         </div>
     );
 }
