@@ -5,8 +5,17 @@ import { Container } from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+  Redirect
+} from "react-router-dom";
 
 export default function Login() {
+    let history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
@@ -16,6 +25,7 @@ export default function Login() {
   
     function handleSubmit(event) {
       event.preventDefault();
+      history.push("/about");
     }
   
     return (
@@ -25,7 +35,7 @@ export default function Login() {
             <Form.Label>Matrícula</Form.Label>
             <Form.Control
               autoFocus
-              type="email"
+              type="login"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
