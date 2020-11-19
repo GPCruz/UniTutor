@@ -6,13 +6,15 @@ const nome_aluno = 'Arnaldo Batista';
 function Welcome() {
 
     return  <Col>
-                Olá, {nome_aluno}!<br />
-                Parece que você está com <b>muita dificuldade</b> em <b>Física 1</b>, <b>Fundamentos de Química</b>, <b>Comunicação e Expressão</b> e <b>Raciocínio Lógico</b>.<br />
-                Aqui vão alguns materiais que podem ajudar com seus estudos:<br /><br />
-                <a href="https://www.fisica.net/problemasresolvidos/">https://www.fisica.net/problemasresolvidos/</a><br />
-                <a href="https://www.todamateria.com.br/exercicios/exercicios-de-quimica/">https://www.todamateria.com.br/exercicios/exercicios-de-quimica/</a><br />
-                <a href="http://www.consultec.com.br/provas/Unifacs20141.pdf">http://www.consultec.com.br/provas/Unifacs20141.pdf</a><br />
-                <a href="https://www.estudegratis.com.br/questoes-de-concurso/materia/raciocinio-logico">https://www.estudegratis.com.br/questoes-de-concurso/materia/raciocinio-logico</a><br />
+                <div className="welcome-msg">
+                    Olá, {nome_aluno}!<br />
+                    Parece que você está com <b>muita dificuldade</b> em algumas disciplinas.<br/>
+                    Separamos por disciplina alguns materiais que podem ajudar com seus estudos:<br /><br />
+                    <a href="https://www.fisica.net/problemasresolvidos/">Física 1</a><br />
+                    <a href="https://www.todamateria.com.br/exercicios/exercicios-de-quimica/">Fundamentos de Química</a><br />
+                    <a href="http://www.consultec.com.br/provas/Unifacs20141.pdf">Comunicação e Expressão</a><br />
+                    <a href="https://www.estudegratis.com.br/questoes-de-concurso/materia/raciocinio-logico">Raciocínio Lógico</a><br />
+                </div>
             </Col>
         
 }

@@ -13,7 +13,7 @@ import { AppContext } from "../libs/contextLib";
 import Welcome from '../components/Welcome';
 
 function AppContainer(props) {
-    const [isAuthenticated, userHasAuthenticated] = useState(false);
+    const [isAuthenticated, userHasAuthenticated] = useState(true);
     
     function handleLogout() {
         userHasAuthenticated(false);
