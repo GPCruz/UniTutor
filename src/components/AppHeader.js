@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-let g_titulo = 'Gerador de conteúdo personalizado';
+let g_titulo = 'UniTutor';
 
 const about = "Este tutor virtual utiliza um sistema de Machine Learning para de identificar défices no seu aprendizado e fornecer conteúdos personalizados para auxiliar na melhoria de seu desempenho acadêmico.";
 
