@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import Login from "./Login";
 import {
   BrowserRouter as Router,
@@ -25,11 +25,11 @@ function AppContainer(props) {
                 <Container>
                     <Router>
                         <div className="nav">
-                            <ul className="menu">
-                                {isAuthenticated ? (
-                                    <li><Link exact to="/" onClick={handleLogout}>Logout</Link></li>
-                                ):""}
-                            </ul>
+                            {isAuthenticated ? (
+                                <Link exact to="/" onClick={handleLogout}>  
+                                    <Button class="btn btn-primary btn-block btn-lg">Logout</Button>
+                                </Link>
+                            ):""}
                         </div>
                         <Row>
                             <Switch>
@@ -37,7 +37,7 @@ function AppContainer(props) {
                                     {isAuthenticated ? (
                                         <Welcome/>
                                     ):(
-                                        <><Col>Explicação sobre o projeto</Col><Col><Login /></Col></>
+                                        <Col><Login /></Col>
                                     )}
                                 </Route>
                             </Switch>

@@ -13,12 +13,20 @@
 
 .App-Title{
   font-weight: 600;
-  font-size: larger;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  padding: 50px 0;
+  font-size: 4vmin;
+  padding: 2vmin 0;
+}
+.App-Subtitle{
+  font-weight: 300;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(3px + 2vmin);
+  font-size: 2vmin;
+  padding: 2vmin 0;
 }
 
 .Header{
