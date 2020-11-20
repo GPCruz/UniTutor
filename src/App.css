@@ -1,6 +1,21 @@
 
 .App {
+  min-height: 100vh;
   text-align: center;
+}
+.AppContainer{
+  min-height: 63vh;
+}
+
+.App-Unauth{
+  background-image: url("./img/robo2.jpg");
+  background-repeat: no-repeat;
+}
+
+.App-Auth{
+  background-image: url("./img/robo1.jpg");
+  background-repeat: no-repeat;
+  background-position-x: right;
 }
 
 .Uni-logo{

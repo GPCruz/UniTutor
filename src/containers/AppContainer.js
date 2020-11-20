@@ -20,8 +20,8 @@ function AppContainer(props) {
     }
 
     return (
-        <div className="App">
-            <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+        <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <div className={isAuthenticated ? "AppContainer App-Auth": "AppContainer App-Unauth"}>
                 <Container>
                     <Router>
                         <div className="nav">
@@ -44,8 +44,8 @@ function AppContainer(props) {
                         </Row> 
                     </Router>
                 </Container>
-            </AppContext.Provider>
-        </div>
+            </div>
+        </AppContext.Provider>
     );
 }
   
